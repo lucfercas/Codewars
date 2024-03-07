@@ -7,3 +7,16 @@
 // [101, 2, 85, 33, 14014]  ==>  [1, 1, 0, 1, 0]
 // [45, 21, 303, 56]        ==>  [0, 0, 1, 0]
 
+function convertPalindromes(numbers) {
+    let result = [];
+    for (let i = 0; i < numbers.length; i++) {
+          let original = numbers[i].toString();
+          let reversed = original.split('').reverse().join('');
+          if (reversed === original) {
+              result.push(1);
+          } else {
+              result.push(0);
+          }
+      }
+      return result;
+  };
