@@ -12,3 +12,19 @@
 // // "What was the name of your first pet?"
 // "Skippy" --> "##ippy"
 // "Nananananananananananananananana Batman!" --> "####################################man!"
+
+function maskify(str) {
+     if (str.length <= 4) {
+       return str;
+     }
+   
+     let maskedPart = '';
+     for (let i = 0; i < str.length - 4; i++) {
+       maskedPart += '#';
+     }
+   
+     const lastFourCharacters = str.slice(-4);
+   
+     return maskedPart + lastFourCharacters;
+   }
+   
