@@ -9,3 +9,19 @@
 // By convention, noon is 12:00 pm, and midnight is 12:00 am.
 // On 12-hours clock, there is no 0 hour, and time just after midnight is denoted as, for example, 12:15 am. On 24-hour clock, this translates to 0015.
 
+function to24hourtime(hour, minute, period) {
+    if (period.toLowerCase() === 'am') {
+      if (hour === 12) {
+        hour = 0;
+      }
+    } else {
+      if (hour !== 12) {
+        hour += 12;
+      }
+    }
+    
+    const hourStr = hour.toString().padStart(2, '0');
+    const minuteStr = minute.toString().padStart(2, '0');
+    
+    return hourStr + minuteStr;
+  }
